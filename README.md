@@ -7,3 +7,4 @@ will reproudec, the code that generate the figure, the PDF that discribe this pr
 ```
 
 # PDF link
+[https://github.com/lqk67506/CS599-project1/blob/master/CS599%20Project%201%20Purpose.pdf][Link to purpose description]
