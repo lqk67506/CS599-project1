@@ -1,0 +1,26 @@
+---
+title: "ML"
+author: "Qingkun Liu"
+date: "Oct 17 2019"
+output: html_document
+---
+
+```{r echO = True}
+library(ggplot2)
+centers_true <- read.csv("center_true.csv")
+centers_false <- read.csv("center_false.csv")
+training_true <- read.csv("training_true.csv")
+training_false <- read.csv("training_false.csv")
+prob <- read.csv("lattice_prob.csv")
+lattice <- read.csv("lattice.csv")
+ggplot() + 
+  scale_color_manual(values = c("#5EB6E9", "#E99F00"))+
+  geom_point(data = centers_true, mapping = aes(x = x1, y =x2), colour = "#E99F00", size = 3)+
+  geom_point(data = centers_false, mapping = aes(x = x1, y=x2), colour = "#5EB6E9", size = 3)+
+  geom_point(data = training_true, mapping =aes(x = x1, y=x2), colour ="#E99F00", shape = 1)+
+  geom_point(data = training_false, mapping =aes(x = x1, y=x2), colour ="#5EB6E9", shape = 1)+
+  geom_point(data = lattice, mapping = aes(x = x1, y= x2, color = factor(type)),size = 0.01, shape =1)+
+  geom_contour(data = lattice, mapping = aes(x = x1, y = x2, z = type), color = "black", bins = 2, breaks = c(0.5))+
+  geom_contour(data = prob, mapping = aes(x = x1, y = x2, z = prob), color = "purple", bins = 2, breaks = c(0.5))
+  
+```
