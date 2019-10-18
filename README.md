@@ -15,3 +15,7 @@ will reproudec, the code that generate the figure, the PDF that discribe this pr
 
 Citation:
 Hastie, et al. Elements of Statistical Learning, Figure 13.2
+
+# Software requirement
+python
+Rstudio
